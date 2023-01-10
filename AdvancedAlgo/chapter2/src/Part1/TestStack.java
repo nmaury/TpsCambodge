@@ -1,5 +1,7 @@
+package Part1;
+
+import Part1.ArrayStack;
 import org.junit.Test;
-import java.util.AbstractMap;
 
 import static org.junit.Assert.*;
 
@@ -41,11 +43,10 @@ public class TestStack {
             assertTrue(this.arrayStack.aEqualsToBEqualsToC("AABBCC"));
         }
         @Test
-    public void partB6(){
+    public void partB6() {
             this.arrayStack.addNotebooks("50;1.25");
             this.arrayStack.addNotebooks("100;1.10");
             this.arrayStack.addNotebooks("50;1.00");
-            assertEquals(267,this.arrayStack.saleInputLine(200),.1);
+            assertEquals(267, this.arrayStack.saleInputLine(200), .1);
         }
-
 }

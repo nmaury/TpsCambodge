@@ -1,0 +1,42 @@
+.item{
+    background-color: rgb(100,100,4);
+    padding : 10px;
+    width: 100px;
+    height: 50px;
+    color: white;
+    text-align: center;
+    position: absolute;
+    border: 1px solid black;
+}
+.item1{
+    background-color: red;
+    left: 50px;
+    top: 20px;
+}
+.item2{
+    background-color: blue;
+    right: 20px;
+    bottom: 10px;
+    position: flex;
+    align-self: flex-end;
+}
+.item3{
+    background-color: blueviolet;
+    left: 150px;
+    top: 70px;
+}
+.item4{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+}
+.parent{
+    background-color: rgb(6,43,43);
+    width: 100%;
+    height: 400px;
+}
+.parent2{
+    background-color: green;
+    width: 100%;
+    height: 200px;
+}

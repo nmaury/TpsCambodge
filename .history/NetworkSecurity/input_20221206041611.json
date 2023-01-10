@@ -1,0 +1,5 @@
+{
+    "role": "humanResource",
+    "action": "write",
+    "object": "staff salary"
+}

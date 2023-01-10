@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d017ae76-d2e6-41d2-bd8d-b8f89204628c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/chapter2/src/ArrayStack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter2/src/Stack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter2/src/StackException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter2/src/TestStack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SoftwareEnginnering/src/TP04/ce1/Tp04.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SoftwareEnginnering/src/TP04/ex1/PrimeNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SoftwareEnginnering/src/TP04/ex2/LuckyNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SoftwareEnginnering/src/TP04/ex3/ReversingNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SoftwareEnginnering/src/TP04/ex4/MoneyExchanges.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SoftwareEnginnering/src/TP04/ex5/MaxNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SoftwareEnginnering/src/TP04/ex6/Shipping.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SoftwareEnginnering/src/TP04/ex7/LeapYear.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SoftwareEnginnering/src/TP05/ce1/RangeUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SoftwareEnginnering/src/TP05/ce2/MessageCoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SoftwareEnginnering/src/TP05/ex1/PrimeNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SoftwareEnginnering/src/TP05/ex2/OddNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SoftwareEnginnering/src/TP05/ex3/EvenNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SoftwareEnginnering/src/TP05/ex4/CompanyProfit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SoftwareEnginnering/src/TP05/ex5/Palindrome.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SoftwareEnginnering/src/TP05/ex6/StringMirror.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SoftwareEnginnering/src/TP05/ex7/CharactersEscape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SoftwareEnginnering/src/TP06/ex1/Circle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SoftwareEnginnering/src/TP06/ex1/Point.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SoftwareEnginnering/src/TP06/ex1/TestCircle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SoftwareEnginnering/src/TP06/ex2/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SoftwareEnginnering/src/TP06/ex2/StudentManagement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SoftwareEnginnering/src/TP06/ex3/PC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SoftwareEnginnering/src/TP06/ex3/Room306F.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SoftwareEnginnering/SoftwareEnginnering.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../SoftwareEnginnering/SoftwareEnginnering.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SoftwareEnginnering/out/production/SoftwareEnginnering/TP03/ex1/SecondToTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SoftwareEnginnering/out/production/SoftwareEnginnering/TP03/ex1/SecondToTime.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SoftwareEnginnering/out/production/SoftwareEnginnering/TP03/ex2/TimeToSecond.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SoftwareEnginnering/out/production/SoftwareEnginnering/TP03/ex2/TimeToSecond.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SoftwareEnginnering/out/production/SoftwareEnginnering/TP03/ex3/CallingCost.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SoftwareEnginnering/out/production/SoftwareEnginnering/TP03/ex3/CallingCost.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.3\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2Hwo0l4FodjoVeyyoUTkbZx1F0a" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d017ae76-d2e6-41d2-bd8d-b8f89204628c" name="Default Changelist" comment="" />
+      <created>1669205286149</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669205286149</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1669789129170">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1669789129170" />
+    <state x="360" y="33" key="new project wizard" timestamp="1669205496619">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="360" y="33" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1669205496619" />
+  </component>
+</project>

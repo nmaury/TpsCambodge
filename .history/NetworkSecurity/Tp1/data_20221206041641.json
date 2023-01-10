@@ -1,0 +1,28 @@
+{
+    "role_grants": {
+        "staff": [
+            {
+                "action": ["read",
+                           "write"],
+                "object": ["general information"]
+            }
+        ],
+        "humanResource": [
+            {
+                "action": ["read",
+                           "write"],
+                "object": ["general information",
+                           "staff salary"]
+            }
+        ],
+        "manager": [
+            {
+                "action": ["read",
+                           "write"],
+                "object": ["general information",
+                           "staff salary",
+                          "sensitive information"]
+            }
+        ]
+    }
+}

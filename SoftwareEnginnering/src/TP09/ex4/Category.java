@@ -1,4 +1,6 @@
-package TP09.ex3;
+package TP09.ex4;
+
+import TP09.ex3.Book;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,5 +40,30 @@ public class Category {
     }
     public int getBooksNumber(){
         return this.bookList.size();
+    }
+
+    public String getName(){
+        return this.name;
+    }
+    public List<Book> getBooks(){
+        return this.bookList;
+    }
+    public String getBooksString(){
+        String result="Books:\n";
+        for(Book b:this.bookList){
+            result+=b+"\n";
+        }
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        String result = "Category: "+this.name+
+                "\n\t - Description: "+this.description+
+                "\n\t - Books: \n";
+        for(Book b:this.bookList){
+            result+=b+"\n";
+        }
+        return result;
     }
 }

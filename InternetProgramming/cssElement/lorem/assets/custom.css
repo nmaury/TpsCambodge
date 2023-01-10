@@ -1,0 +1,21 @@
+#Panes div:first-child p {
+    color: blue;
+}
+h2 {
+    color:red;
+}
+
+label[for="words"]{
+color: green;
+}
+
+#generate{
+    color:blue;
+}
+#Panes #generate:hover{
+    color: white;
+    background-color: blue;
+}
+#Languages{
+    font-size: 1.5rem;
+}

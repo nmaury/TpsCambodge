@@ -1,5 +1,6 @@
+package Part1;
+
 import java.util.AbstractMap;
-import java.util.Scanner;
 
 public class ArrayStack implements Stack {
     // default capacity of stack
@@ -41,13 +42,18 @@ public class ArrayStack implements Stack {
         for(int i=0;i<this.size();i++) {
             res += this.S[i] + " ; ";
         }
-        return res.substring(0,res.length()-3);
+        if(res!=""){
+            return res.substring(0,res.length()-3);
+
+        }else {
+            return res;
+        }
     }
 
     @Override
     public Object pop() throws StackException {
         if(this.isEmpty()){
-            throw new StackException("Stack is empty !");
+            throw new StackException("Part1.Stack is empty !");
         }else{
             Object res = this.S[this.t];
             this.S[this.t]=null;
@@ -59,7 +65,7 @@ public class ArrayStack implements Stack {
     @Override
     public Object top() throws StackException {
         if(this.isEmpty()){
-            throw new StackException("Stack is empty !");
+            throw new StackException("Part1.Stack is empty !");
         }else {
             return this.S[this.t];
         }
@@ -164,8 +170,8 @@ public class ArrayStack implements Stack {
     public void addNotebooks(String data){
         String [] notebookInput = data.split(";");
         this.push(new AbstractMap.SimpleEntry<Integer, Double>(Integer.parseInt(notebookInput[0]),Double.parseDouble(notebookInput[1])));
-        System.out.println(((AbstractMap.SimpleEntry)this.top()).getKey());
-        System.out.println(((AbstractMap.SimpleEntry)this.top()).getValue());
+        //System.out.println(((AbstractMap.SimpleEntry)this.top()).getKey());
+        //System.out.println(((AbstractMap.SimpleEntry)this.top()).getValue());
     }
     public double saleInputLine(int quantity){
         System.out.println(quantity+" notebooks sold");
@@ -182,6 +188,7 @@ public class ArrayStack implements Stack {
                 int notebooksLeft = topNotebooks - quantity;
                 System.out.printf("%d at %.2f each \t sales: $%.2f \n",quantity, priceNotebook*1.2, quantity*priceNotebook*1.2);
                 total+=quantity*priceNotebook*1.2;
+                quantity = 0;
                 this.pop();
                 this.push(new AbstractMap.SimpleEntry<>(notebooksLeft,priceNotebook));
             }

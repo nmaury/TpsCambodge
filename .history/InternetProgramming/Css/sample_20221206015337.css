@@ -1,0 +1,27 @@
+.item{
+    background-color: rgb(54,7,148);
+    padding : 10px;
+    width: 100px;
+    height: 50px;
+    color: white;
+    text-align: center;
+    position: absolute;
+    left: 30px;
+    top: 50px;
+}
+.item1{
+    background-color: rgb(100,100,4);
+    padding : 10px;
+    width: 100px;
+    height: 50px;
+    color: white;
+    text-align: center;
+    position: absolute;
+    left: 50px;
+    top: 50px;
+}
+.parent{
+    background-color: rgb(6,43,43);
+    width: 100%;
+    height: 400px;
+}

@@ -1,0 +1,11 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+}
+.flying-box{
+    background-color: orangered;
+    color:white;
+    padding: 20px;
+}

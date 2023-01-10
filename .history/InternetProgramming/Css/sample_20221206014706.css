@@ -1,0 +1,12 @@
+.item{
+    background-color: rgb(54,7,148);
+    padding : 10px;
+    width: 25%;
+    color: white;
+    text-align: center;
+}
+.parent{
+    background-color: rgb(6,43,43);
+    width: 100%;
+    height: 400px;
+}
