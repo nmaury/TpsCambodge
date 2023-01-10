@@ -6,20 +6,42 @@
         const canvas = document.getElementById("canvas-container");
         let ctx = canvas.getContext('2d');
         //Question 1:
-        const greenBrick= "#5C9A33";
-        const yellowBrick= "#F9A620";
-        const redBrick="#690500";
+        const greenBrick= {
+            backgroundColor : "#5C9A33",
+            borderColor : "#000000",
+            width: 50,
+            height:20
+        }
+        const yellowBrick= {
+            backgroundColor : "#F9A620",
+            borderColor : "#42CAFD",
+            width: 50,
+            height:50
+        } 
+        const redBrick={
+            backgroundColor : "#690500",
+            borderColor : "#B0228C",
+            width: 20,
+            height:50
+        }
 
         //display green brick
-        ctx.fillStyle=greenBrick;
-        ctx.fillRect(100,50,50,20);
+        ctx.fillStyle=greenBrick.backgroundColor;
+        ctx.strokeStyle=greenBrick.borderColor;
+        ctx.fillRect(100,50,greenBrick.width,greenBrick.height);
+        ctx.strokeRect(100,50,greenBrick.width,greenBrick.height);
+
         //display yellow brick
-        ctx.fillStyle=yellowBrick;
-        ctx.fillRect(200,50,50,20);
+        ctx.fillStyle=yellowBrick.backgroundColor;
+        ctx.strokeStyle=yellowBrick.borderColor;
+        ctx.fillRect(200,50,yellowBrick.width,yellowBrick.height);
+        ctx.strokeRect(200,50,yellowBrick.width,yellowBrick.height);
+
         //display red brick
-        ctx.fillStyle=redBrick;
-        ctx.fillRect(300,50,50,20);
-        
+        ctx.fillStyle=redBrick.backgroundColor;
+        ctx.strokeStyle=redBrick.borderColor;
+        ctx.fillRect(300,50,redBrick.width,redBrick.height);
+        ctx.strokeRect(300,50,redBrick.width,redBrick.height);
         
     </script>
     </body>
