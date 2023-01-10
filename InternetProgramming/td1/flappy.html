@@ -10,39 +10,60 @@
             backgroundColor : "#5C9A33",
             borderColor : "#000000",
             width: 50,
-            height:20
+            height:20,
+            draw: () =>{
+                ctx.fillStyle=greenBrick.backgroundColor;
+                ctx.strokeStyle=greenBrick.borderColor;
+                ctx.fillRect(100,50,greenBrick.width,greenBrick.height);
+                ctx.strokeRect(100,50,greenBrick.width,greenBrick.height);
+            }
         }
         const yellowBrick= {
             backgroundColor : "#F9A620",
             borderColor : "#42CAFD",
             width: 50,
-            height:50
+            height:50,
+            draw: () =>{
+                ctx.fillStyle=yellowBrick.backgroundColor;
+                ctx.strokeStyle=yellowBrick.borderColor;
+                ctx.fillRect(200,50,yellowBrick.width,yellowBrick.height);
+                ctx.strokeRect(200,50,yellowBrick.width,yellowBrick.height);
+            }
         } 
         const redBrick={
             backgroundColor : "#690500",
             borderColor : "#B0228C",
             width: 20,
-            height:50
+            height:50,
+            draw:()=>{
+                ctx.fillStyle=redBrick.backgroundColor;
+                ctx.strokeStyle=redBrick.borderColor;
+                ctx.fillRect(300,50,redBrick.width,redBrick.height);
+                ctx.strokeRect(300,50,redBrick.width,redBrick.height);
+            }
         }
 
         //display green brick
-        ctx.fillStyle=greenBrick.backgroundColor;
-        ctx.strokeStyle=greenBrick.borderColor;
-        ctx.fillRect(100,50,greenBrick.width,greenBrick.height);
-        ctx.strokeRect(100,50,greenBrick.width,greenBrick.height);
-
+        greenBrick.draw()
         //display yellow brick
-        ctx.fillStyle=yellowBrick.backgroundColor;
-        ctx.strokeStyle=yellowBrick.borderColor;
-        ctx.fillRect(200,50,yellowBrick.width,yellowBrick.height);
-        ctx.strokeRect(200,50,yellowBrick.width,yellowBrick.height);
-
+        yellowBrick.draw()
         //display red brick
-        ctx.fillStyle=redBrick.backgroundColor;
-        ctx.strokeStyle=redBrick.borderColor;
-        ctx.fillRect(300,50,redBrick.width,redBrick.height);
-        ctx.strokeRect(300,50,redBrick.width,redBrick.height);
+        redBrick.draw()
         
+        createWall(300,200,greenBrick)
+
+        
+        /*function createWall(witdhWall,heightWall,brick){
+            widthOffset = 100;
+            heightOffset = 50;
+            //widthCursor = widthOffset;
+            //heightCursor = heightOffset;
+            witdhWall = witdhWall+widthOffset;
+            heightWall = heightWall+heightOffset;
+            
+            brickColumns = Math.trunc(witdhWall/brick.width)
+            brickLines= Math.trunc(heightWall/brick.height)
+        }*/
     </script>
     </body>
 </html>
