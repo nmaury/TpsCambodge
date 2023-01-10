@@ -1,0 +1,26 @@
+<html>
+    <body>
+        <canvas width="500px" height="300px" id="canvas-container"></canvas>
+    </body>        
+    <script>
+        const canvas = document.getElementById("canvas-container");
+        let ctx = canvas.getContext('2d');
+        //Question 1:
+        const greenBrick= "#5C9A33";
+        const yellowBrick= "#F9A620";
+        const redBrick="#690500";
+
+        //display green brick
+        ctx.fillStyle=greenBrick;
+        ctx.fillRect(100,50,50,20);
+        //display yellow brick
+        ctx.fillStyle=yellowBrick;
+        ctx.fillRect(200,50,50,20);
+        //display red brick
+        ctx.fillStyle=redBrick;
+        ctx.fillRect(300,50,50,20);
+        
+        
+    </script>
+    </body>
+</html>
