@@ -42,6 +42,43 @@
                 ctx.strokeRect(widthDraw,heightDraw,redBrick.width,redBrick.height);
             }
         }
+        const bird={
+            x:100,
+            y:200,
+            speed:10,
+            color:"#FE5F55",
+            name: "red throat",
+            score: 0,
+            src:"assets/bird0.PNG",
+            srcNumber:0,
+            draw:()=>{
+                drawing = new Image()
+                drawing.src = bird.src;
+                drawing.onload = function(){
+                    ctx.drawImage(drawing,bird.x,bird.y,50,50);
+                }
+            },
+        }
+        //display bird
+        bird.draw()
+
+        //add event listener for the pad
+        document.addEventListener("keyup",(e)=>{
+                    if(e.key==="ArrowLeft"){
+                        ctx.clearRect(bird.x,bird.y,50,50);
+                        bird.x = bird.x - bird.speed*2;
+                        bird.srcNumber = (bird.srcNumber+1)%14
+                        bird.src = "assets/bird"+bird.srcNumber+".PNG"
+                        bird.draw();
+                    }else if (e.key==="ArrowRight"){
+                        ctx.clearRect(bird.x,bird.y,50,50);
+                        bird.x = bird.x + bird.speed *2;
+                        bird.srcNumber = (bird.srcNumber+1)%14
+                        bird.src = "assets/bird"+bird.srcNumber+".PNG"
+                        bird.draw();
+                    }
+                    
+                })
 
         //display green brick
         //greenBrick.draw(100,50)
@@ -68,11 +105,11 @@
             
             brickColumns = Math.trunc(witdhWall/brick.width)
             brickLines= Math.trunc(heightWall/brick.height)
-            console.log(brickColumns)
-            console.log(brickLines)
+            //console.log(brickColumns)
+            //console.log(brickLines)
             for(i=0;i<brickLines;i++){
                 for(j=0;j<brickColumns;j++){
-                    console.log("line "+i+" ; column "+j);
+                    //console.log("line "+i+" ; column "+j);
                     brick.draw(widthOffset+j*brick.width,heightOffset+i*brick.height)
                 }
             }
