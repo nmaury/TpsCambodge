@@ -1,6 +1,6 @@
 <html>
     <body>
-        <canvas width="1000px" height="1200px" id="canvas-container"></canvas>
+        <canvas style="border:solid black 4px;" width="800px" height="500px" id="canvas-container"></canvas>
     </body>        
     <script>
         const canvas = document.getElementById("canvas-container");
@@ -50,9 +50,12 @@
         //display red brick
         //redBrick.draw()
         
-        createWall(300,200,greenBrick,100,50)
-        createWall(50,100,yellowBrick,100,300)
-        createWall(30,85,redBrick,100,500)
+        createWall(50,200,greenBrick,200,0)
+        createWall(50,100,greenBrick,50,300)
+        createWall(100,100,yellowBrick,225,275)
+        createWall(120,50,redBrick,350,50)
+        createWall(120,50,redBrick,380,150)
+        createWall(50,250,greenBrick,600,200)
 
         
         function createWall(witdhWall,heightWall,brick,posWidth,posHeight){
@@ -60,8 +63,8 @@
             heightOffset = posHeight;
             //widthCursor = widthOffset;
             //heightCursor = heightOffset;
-            witdhWall = witdhWall+100;
-            heightWall = heightWall+50;
+            witdhWall = witdhWall;
+            heightWall = heightWall;
             
             brickColumns = Math.trunc(witdhWall/brick.width)
             brickLines= Math.trunc(heightWall/brick.height)
