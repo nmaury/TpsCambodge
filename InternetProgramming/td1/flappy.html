@@ -7,6 +7,8 @@
         let ctx = canvas.getContext('2d');
         //Question 1:
         const greenBrick= {
+            x:null,
+            y:null,
             backgroundColor : "#5C9A33",
             borderColor : "#000000",
             width: 50,
@@ -19,6 +21,8 @@
             }
         }
         const yellowBrick= {
+            x:null,
+            y:null,
             backgroundColor : "#F9A620",
             borderColor : "#42CAFD",
             width: 50,
@@ -31,6 +35,8 @@
             }
         } 
         const redBrick={
+            x:null,
+            y:null,
             backgroundColor : "#690500",
             borderColor : "#B0228C",
             width: 20,
@@ -79,7 +85,7 @@
                     }
                     
                 })
-
+        var bricks = []
         //display green brick
         //greenBrick.draw(100,50)
         //display yellow brick
@@ -102,7 +108,6 @@
             //heightCursor = heightOffset;
             witdhWall = witdhWall;
             heightWall = heightWall;
-            
             brickColumns = Math.trunc(witdhWall/brick.width)
             brickLines= Math.trunc(heightWall/brick.height)
             //console.log(brickColumns)
@@ -111,8 +116,27 @@
                 for(j=0;j<brickColumns;j++){
                     //console.log("line "+i+" ; column "+j);
                     brick.draw(widthOffset+j*brick.width,heightOffset+i*brick.height)
+                    brick.x = widthOffset+j*brick.width;
+                    brick.y = heightOffset+i*brick.height;
+                    bricks.push(brick);
                 }
             }
+        }
+        //check if the bird crash
+        console.log(bricks);
+        var colision = false;
+        bricks.forEach(brick=>{
+            var leftUp = {x:bird.x,y:bird.y}
+            var rightUp = {x:bird.x+50,y:bird.y}
+            var leftDown = {x:bird.x,y:bird.y+50}
+            var rightDown = {x:bird.x+50,y:bird.y+50}
+            if((rightUp.x >= brick.x)&&(rightUp.x <= brick.x+brick.width)&&(rightUp.y >= brick.y)&&(rightUp.y <= brick.y+brick.height)){
+                colision = true;
+            }
+        });
+        console.log(colision);
+        if(colision){
+            alert("There is  colision !!");
         }
     </script>
     </body>

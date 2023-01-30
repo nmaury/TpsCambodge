@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="tp3-05.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body style="background-color:#1C3144">
+        <div id="loginPage" class="container-menu">
+           <div>Given login info</div>
+           <div>Email: test@gmail.com</div>
+           <div>Pwd: Gic123</div>
+           <div class="loginForm">
+                <div style="margin-left:50px"><svg style="height:100px"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+                    <path fillRule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clipRule="evenodd" />
+                  </svg>
+                  </div>
+                <div class="bold">Email</div>
+                <input id="email"class="input"placeholder="  Enter email">
+                <div class="bold">Password</div>
+                <input id="password" class="input"placeholder="  Enter Password">
+                <button class="button" onclick="loginClick()">Login</button>
+           </div>
+        </div>
+        <div style="display: none"id="mainPage" class="container-menu">
+            <div class="text-xl">Welcome to Home Page</div>
+            <div>You will be automatically logged out after 30 seconds</div>
+            <div>Keep refreshing your page</div>
+            <button class="logout" onclick="logOut()">Logout</button>
+        </div>
+        <script>
+            function loginClick(){
+                const email = document.getElementById("email").value;
+                const password = document.getElementById("password").value;
+                if((email==="test@gmail.com")&&(password==="Gic123")){
+                    if(!checkCookie(email)){
+                    setCookie(email); 
+                    }
+                    loadMainPage();
+                }else{
+                    alert("wrong email or password!")
+                }
+            }
+            function loadMainPage(){
+                document.getElementById("loginPage").style.display="none";
+                document.getElementById("mainPage").style.display="block";                
+            }
+            function checkCookie(email){
+                const cookies = document.cookie.split(";");
+                cookies.forEach(c=>{
+                    if(c===email){
+                        return true;
+                    }
+                });
+                return false;
+            }
+            function setCookie(email){
+                console.log(email)
+                const d = new Date();
+                d.setTime(d.getTime() + (30*1000));
+                document.cookie = email+' ; path=/; expires='+d.toUTCString();
+            }
+            function logOut(){
+                forcedExpiration();
+                loadLoginPage();
+            }
+            function loadLoginPage(){
+                document.getElementById("mainPage").style.display="none";
+                document.getElementById("loginPage").style.display="block";
+            }
+            function forcedExpiration(){
+                const d = new Date();
+                d.setTime(d.getTime() - (30*1000));
+                document.cookie = 'test@gmail.com ; path=/; expires='+d.toUTCString();
+            }
+            (function loop(){
+                if(document.cookie===""){
+                    loadLoginPage();
+                }else{
+                    loadMainPage();
+                }
+                setTimeout(loop,1000/30);
+            })();
+        </script>
+    </body>
+</html>

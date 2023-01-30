@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="tp3-03.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body style="background-color:#1C3144">
+        <div class="container-menu">
+            <div class="center bold text-xl">Cookie Management</div>
+            <div class="menu">
+                <div>
+                    <div>Key</div>
+                    <input class="input" id="key" name="key" placeholder="  Key">
+                </div>
+                <div>
+                    <div>Value</div>
+                    <input class="input" id="value" name="value" placeholder="  Value">
+                </div>
+                <div>
+                    <div>Expired</div>
+                    <input class="input" id="dateline" type="date" name="dateline">
+                </div>
+                <div>
+                    <button class="add">Add</button>
+                </div>
+            </div>
+            <div class="items"id="items-wrapper">
+            </div>
+        </div>
+        <script>
+            //var listItems=[];
+            function addNewLine(key,value,dateline){
+                //const titleStorage = "line"+key;
+                //listItems.push({title:title,assignee:assignee,dateline:dateline});
+                const date = new Date(dateline);
+                document.cookie= encodeURIComponent(key)+'='+encodeURIComponent(value)+"; path=/; expires="+date
+                displayList();
+            }
+            document.querySelector(".add").addEventListener('click', (e)=>{
+                const key = document.getElementById("key").value;
+                const value = document.getElementById("value").value;
+                const dateline = document.getElementById("dateline").value;
+                if(key===""){
+                    alert("the title is missing");
+                }else if(value===""){
+                    alert("the assignee is missing")
+                }else if(dateline===""){
+                    alert("the dateline is missing")
+                }else{
+                    addNewLine(key,value,dateline);
+                }
+            })
+            function displayList(){
+                var listContent ="";
+                if(document.cookie!==""){
+                const items= document.cookie.split('; ');
+                console.log(items)
+                items.forEach(item=>{
+                    const key = item.split('=')[0];
+                    const value = item.split('=')[1];
+                    listContent=listContent+`<div class="item">
+                    <div>${key}</div>
+                    <div>${value}</div>
+                    <button class="bin" onclick="removeItem('${key}')"style="height:20px;width:110px;display:flex;border:solid black 1px;border-radius:10px;background-color:#EB9486"><div style="width:90px"class="text-xs">Set expired</div> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#000000" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                      </svg>
+                    </button>
+                </div>`
+                })
+            }
+                document.getElementById('items-wrapper').innerHTML=listContent;
+            }
+            displayList();
+            function removeItem(key){
+                document.cookie=encodeURIComponent(key)+"=expired ; path=/; expires=Mon, 9 Jan 2023 00:00:00 GMT"
+                displayList();
+            }
+        </script>
+    </body>
+</html>

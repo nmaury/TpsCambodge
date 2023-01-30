@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="../opencv.js" type="text/javascript"></script>
+        <style>
+            .canvas-container{
+                display:flex;
+                flex-wrap:wrap;
+                width:525px;
+            }
+            .item{
+                width: 166.67px;
+                height:200px;
+            }
+        </style>
+    </head>
+    <body style="background-color:#2E4057">
+        <video autoplay style="display:none"></video>
+        <div style="display:flex;position: absolute;top:50%;left:50%;transform: translate(-50%,-50%);">
+        <div><canvas id="canvas" width="500px"height="600px"style="border:solid #353536 4px;background-color:#FFFFFF;">
+        </canvas>
+            <div style="text-align:center;color:#FFFFFF;width:500px;height:50px;background-color:#353536;border:solid #353536 4px;">
+                <div>Canvas 👻: please show your face on me </div>
+                <div style="display:flex;justify-content: center;">
+                    <button *ngIf="playing"class="button" onclick="playing=false">Pause</button>
+                </div>
+            </div>
+        </div>
+            <div class="canvas-container">
+                <canvas class="item"id="output-canvas1" style="border:solid #353536 4px;background-color:#FFFFFF;"></canvas>
+                <canvas class="item"id="output-canvas2" style="border:solid #353536 4px;background-color:#FFFFFF;"></canvas>
+                <canvas class="item" id="output-canvas3" style="border:solid #353536 4px;background-color:#FFFFFF;"></canvas>
+                <canvas class="item"id="output-canvas4" style="border:solid #353536 4px;background-color:#FFFFFF;"></canvas>
+                <canvas class="item"id="output-canvas5" style="border:solid #353536 4px;background-color:#FFFFFF;"></canvas>
+                <canvas class="item"id="output-canvas6" style="border:solid #353536 4px;background-color:#FFFFFF;"></canvas>
+                <canvas class="item"id="output-canvas7" style="border:solid #353536 4px;background-color:#FFFFFF;"></canvas>
+                <canvas class="item"id="output-canvas8" style="border:solid #353536 4px;background-color:#FFFFFF;"></canvas>
+                <canvas class="item"id="output-canvas9" style="border:solid #353536 4px;background-color:#FFFFFF;"></canvas>
+            </div>
+        </div>
+        <script>
+           var playing=true;
+           var video = document.querySelector('video')
+           navigator.mediaDevices.getUserMedia({
+            audio: false,
+            video: true
+        }).then((stream)=>{
+            video.srcObject=stream;
+        }).catch((err)=>{
+            console.log('navigator.MediaDevices.getUserMedia error: ',err.message,err.name);
+        });
+        (function loop(){
+            if(playing){
+                const canvas = document.getElementById("canvas");
+                let ctx = canvas.getContext('2d');
+                ctx.drawImage(video,0,0,canvas.width,canvas.height);
+
+                drawPart(1,0,0);
+                drawPart(2,1,0);
+                drawPart(3,2,0);
+                drawPart(4,0,1);
+                drawPart(5,1,1);
+                drawPart(6,2,1);
+                drawPart(7,0,2);
+                drawPart(8,1,2);
+                drawPart(9,2,2);
+
+                setTimeout(loop,1000/30);
+            }
+        })();
+        function drawPart(number,numberLine,numberColumn){
+            let src = cv.imread('canvas');
+                let dst = new cv.Mat();
+                let rect = new cv.Rect(numberLine*canvas.width/3,numberColumn*canvas.height/3 , canvas.width/3, canvas.height/3);
+                dst = src.roi(rect);
+                cv.imshow('output-canvas'+number, dst);
+        }
+        </script>
+    </body>
+</html>

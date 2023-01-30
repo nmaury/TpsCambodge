@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="tp3-04.css">
+    </head>
+    <body>
+        <div id="div-wrapper"class="div-wrapper">
+            <div class="form-wrapper">
+                <div>Name:</div>
+                <input id="name"placeholder="c programming">
+                <div>Category:</div>
+                <input id="category"placeholder="coding">
+                <div>Price:</div>
+                <input id="price"placeholder="1.000 riels">
+                <div><button class="add">Add</button>
+                </div>
+            </div>
+            <div class="list-wrapper"id="list-wrapper">
+                <!--<div class="changeInput"id="changeInput">
+                <div>New name: </div>
+                <input id="input"placeholder="  name">
+                <button onclick="changeOK()">OK!</button>
+                </div>-->
+            </div>
+        </div>
+        <script>
+            document.querySelector('.add').addEventListener('click',(e)=>{
+                const name= document.getElementById('name').value;
+                const category= document.getElementById('category').value;
+                const price= document.getElementById('price').value;
+                if(name===""){
+                    alert("the name is missing");
+                }else if(category===""){
+                    alert("the category is missing")
+                }else if(price===""){
+                    alert("the price is missing")
+                }else{
+                    addItem(name,category,price);
+                }
+            });
+            //var listItems=[];
+            function addItem(name,category,price){
+                //listItems.push({name:name,category:category,price:price});
+                const titleStorage = "line"+encodeURIComponent(name);
+                localStorage.setItem(titleStorage,JSON.stringify({name:name,category:category,price:price}));
+                displayItems();
+            }
+            function displayItems(){
+                var listContent="";
+                const keys = Object.keys(localStorage)
+                keys.forEach(key=>{
+                    item = JSON.parse(localStorage.getItem(key));
+                    console.log(item)
+                    const name = encodeURIComponent(item.name);
+                    listContent=listContent+`<div class="item">
+                    <div class="button-wrapper">
+                        <button onClick=deleteClick('${key}')>Delete</button>
+                        <button onClick=changeName('${key}')>Change name</button>
+                    </div>
+                    <div>
+                        <svg style="height:100px;padding:30px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#595457" className="w-6 h-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                          </svg>                          
+                    </div>
+                    <div>Name: ${item.name}</div>
+                    <div>Price: ${item.price}</div>
+                    <div>Category:${item.category}</div>
+                </div>`;
+                });
+                document.getElementById('list-wrapper').innerHTML=listContent;
+            }
+            displayItems();
+            function deleteClick(key){
+                console.log(key);
+                localStorage.removeItem(key);
+                displayItems();
+            }
+            function changeName(key){
+                const newDiv = document.createElement("div");
+                newDiv.classList.add("changeInput");
+                const divText = document.createElement("div");
+                const newContent = document.createTextNode("New name: ");
+                divText.appendChild(newContent);
+                const inputChange = document.createElement("input");
+                const button = document.createElement("button");
+                const buttonText = document.createTextNode("OK!");
+                button.appendChild(buttonText);
+                button.addEventListener('click',(e)=>{
+                    if(inputChange.value===""){
+                        alert("the new name is empty!")
+                    }else{
+                        const item = JSON.parse(localStorage.getItem(key));
+                        localStorage.setItem(key,JSON.stringify({name:inputChange.value,category:item.category,price:item.price}))
+                        newDiv.remove();
+                        displayItems();
+
+                        /*listItems.forEach(elt=>{
+                        if(encodeURIComponent(elt.name)===name){
+                            elt.name = encodeURIComponent(inputChange.value);
+                            newDiv.remove();
+                            displayItems();
+                        }
+                    });*/
+                    }
+                });
+
+                newDiv.appendChild(divText);
+                newDiv.appendChild(inputChange);
+                newDiv.appendChild(button);
+
+                const currentDiv = document.getElementById('list-wrapper');
+                document.getElementById("div-wrapper").insertBefore(newDiv,currentDiv);
+                //document.getElementById('changeInput').display="block";
+            }
+            /*function changeOk(){
+                console.log(document.getElementById('changeInput').value);
+            }*/
+            
+
+        </script>
+    </body>
+</html>

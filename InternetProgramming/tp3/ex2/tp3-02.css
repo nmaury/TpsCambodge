@@ -1,0 +1,46 @@
+.container-menu{
+    position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  width:600px;
+  height:400px;
+  background-color: #FFFFFF;
+  border:solid black 4px;
+  text-align:center
+}
+.menu{
+    width:90%;
+    height:70px;
+    background-color:#A0BFD6;
+    border-radius: 10px;
+    margin-left: 30px;
+    margin-top:10px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.add{
+    color:#FFFFFF;
+    width:50px;
+    height: 27px;
+    background-color:#0164B5; 
+    border-radius: 10px;
+}
+.input{
+    width: 90%;
+    border-radius: 10px;
+    height: 35px;
+}
+.item{
+    border:solid grey 1px;
+    width: 90%;
+    height:35px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    margin-left: 30px;
+    margin-top:10px;
+
+}

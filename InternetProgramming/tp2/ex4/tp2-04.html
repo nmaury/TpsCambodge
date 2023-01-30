@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body style="background-color:#2E4057">
+        <video autoplay style="display:none"></video>
+        <canvas id="canvas" width="500px"height="600px"style="border:solid #353536 4px;background-color:#FFFFFF;position: absolute;top:50%;left:50%;transform: translate(-50%,-50%);">
+        </canvas>
+        <div style="text-align:center;color:#FFFFFF;width:500px;height:50px;background-color:#353536;border:solid #353536 4px;position: absolute;top:96%;left:50%;transform: translate(-50%,-50%);">
+            <div>Canvas 👻: please show your face on me </div>
+            <div style="display:flex;justify-content: center;">
+                <button *ngIf="playing"class="button" onclick="playing=false">Pause</button>
+            </div>
+        </div>
+        <script>
+           var playing=true;
+           var video = document.querySelector('video')
+           navigator.mediaDevices.getUserMedia({
+            audio: false,
+            video: true
+        }).then((stream)=>{
+            video.srcObject=stream;
+        }).catch((err)=>{
+            console.log('navigator.MediaDevices.getUserMedia error: ',err.message,err.name);
+        });
+        
+        (function loop(){
+            if(playing){
+                const canvas = document.getElementById("canvas");
+                let ctx = canvas.getContext('2d');
+                ctx.drawImage(video,0,0,canvas.width,canvas.height);
+                setTimeout(loop,1000/30);
+            }
+        })();
+        
+        </script>
+    </body>
+</html>
