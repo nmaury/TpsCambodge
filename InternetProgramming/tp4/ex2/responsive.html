@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="responsive.css">
+    </head>
+    <body>
+        <div class="container">
+        <h1 class="title">Our Menu</h1>
+        <div class="horizontal-bar"></div>
+        <div class="menus">
+            <button class="button">All</button>
+            <button class="button">Breakfast</button>
+            <button class="button">Lunch</button>
+            <button class="button">Shakes</button>
+            <button class="button">Dinner</button>
+        </div>
+        <div id="items">
+        </div>
+        
+        </div>
+        <script>
+            const item1 ={
+                src:"pancake.jpg",
+                name:"Buttermilk Pancakes",
+                price: "15.99",
+                description: "Lorem ipsum dolor sit amet, veniam qui eu consequat enim veniam ex fugiat voluptate occaecat culpa enim occaecat sunt. Laboris adipisicing veniam reprehenderit duis dolor duis tempor incididunt consectetur. Ex deserunt magna excepteur sunt ea officia dolore fugiat quis veniam cupidatat ex est qui cupidatat non."
+            };
+            const item2 ={
+                src:"burger.jpg",
+                name:"Diner Double",
+                price: "13.99",
+                description: "Lorem ipsum dolor sit amet, ad excepteur enim occaecat ut duis et adipisicing Lorem. Proident excepteur duis id exercitation. Voluptate ad aliqua amet nulla cupidatat dolor fugiat in irure culpa nulla nisi nostrud do. In duis Lorem adipisicing. Duis nulla magna magna aute Lorem ut id ea nulla Lorem nulla sit ullamco nostrud voluptate do ullamco ipsum."
+            };
+            const item3 ={
+                src:"milkshake.jpg",
+                name:"Godzilla Milkshake",
+                price: "6.99",
+                description: "Lorem ipsum dolor sit amet, minim do nostrud tempor culpa dolore laboris id ut ad exercitation laboris incididunt sunt nostrud. Minim quis pariatur qui id amet elit. Elit Lorem sint do non velit exercitation amet mollit cupidatat duis nulla sunt quis. Qui ex aute dolor. Eu esse consequat ullamco deserunt ea magna Lorem deserunt commodo ea officia esse nisi eiusmod esse enim. Excepteur nisi cillum amet incididunt tempor commodo Lorem ullamco anim nostrud deserunt. Aute ut laborum cillum magna pariatur eiusmod laboris anim laboris mollit laborum mollit exercitation do. Elit aliqua est cillum reprehenderit anim ut nostrud tempor est id dolore et reprehenderit ullamco et do ea."
+            };
+            
+           var items=[item1,item2,item3];
+           var itemsHtml = "";
+           items.forEach(elt=>{
+                itemsHtml += `<div class="item" >
+                        <div class="image"><img src=${elt.src} width=-webkit-fill-available height=150px></div>
+                        <div class="text-part">
+                            <div class="top-container">
+                                <div class="name">
+                                    ${elt.name}
+                                </div>
+                                <div class="price">
+                                    $${elt.price}
+                                </div>
+                            </div>
+                            <div class="fit-line"></div>
+                            <div class="description">
+                                ${elt.description}
+                            </div>
+                        </div>
+                    </div>`
+           });
+           document.getElementById("items").innerHTML=itemsHtml;
+        </script>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+.container{
+    position: absolute;
+    width: 450px;
+    height:650px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border: solid black 5px;
+    background-color: #ededf1;
+}
+.title{
+    text-align: center;
+}
+.description{
+    text-align: center;
+}
+.image{
+    margin: 20px;
+    width: -webkit-fill-available;
+}
+.tripleMenu{
+    margin:20px;
+    width: -webkit-fill-available;
+    background-color: #FFFFFF;
+}
+.topmenus{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.menu{
+    text-align: center;
+    background-color: #99B2DD;
+    color: #414c60;
+    height:30px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+#content{
+    height: 175px;
+    margin: 10px;
+}
+#history:hover{
+    background-color: #FFFFFF;
+}
+#vision:hover{
+    background-color: #FFFFFF;
+}
+#goal:hover{
+    background-color: #FFFFFF;
+}
+.contenttitle{
+    font-weight: bold;
+}

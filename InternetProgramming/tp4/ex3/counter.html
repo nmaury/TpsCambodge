@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="counter.css">
+    </head>
+    <body>
+        <div class="container">
+        <h1 class="title">Counter</h1>
+        <h1 id="number"></h1>
+        <div class="buttons">
+            <button id="decrease" class="button">DECREASE</button>
+            <button id="reset" class="button">RESET</button>
+            <button id="increase" class="button">INCREASE</button>
+        </div>
+        </div>
+        <script>
+            class Counter{
+                number=0;
+                constructor(num){
+                    this.number=num;
+                    localStorage.setItem("count",JSON.stringify({value:this.number}));
+                }
+                decrease(){
+                    this.number--;
+                    localStorage.setItem("count",JSON.stringify({value:this.number}));
+                }
+                increase(){
+                    this.number++;
+                    localStorage.setItem("count",JSON.stringify({value:this.number}));
+                }
+                reset(){
+                    this.number=0;
+                    localStorage.setItem("count",JSON.stringify({value:this.number}));
+                }
+            }
+            if(localStorage.getItem("count")===null){
+            var c = new Counter(0);
+            }else{
+                var c = new Counter(JSON.parse(localStorage.getItem("count")).value);
+            }
+            document.getElementById("number").innerHTML=JSON.parse(localStorage.getItem("count")).value;
+            document.getElementById("decrease").addEventListener("click",e=>{
+                c.decrease();
+                document.getElementById("number").innerHTML=JSON.parse(localStorage.getItem("count")).value;
+            });
+            document.getElementById("reset").addEventListener("click",e=>{
+                c.reset();
+                document.getElementById("number").innerHTML=JSON.parse(localStorage.getItem("count")).value;
+            });
+            document.getElementById("increase").addEventListener("click",e=>{
+                c.increase();
+                document.getElementById("number").innerHTML=JSON.parse(localStorage.getItem("count")).value;
+            });
+        </script>
+    </body>
+</html>

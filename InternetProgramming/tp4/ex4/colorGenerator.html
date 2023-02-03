@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="colorGenerator.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">Random Color Generator</div>
+            <div id="menu-container">
+                <div class="main-text">
+                    <div class="back-color">Background Color :</div>
+                    <div id="color"></div>
+                </div>
+                <div class="buttons">
+                    <button class="button" id="generate">GENERATE</button>
+                    <button class="button" id="reset">RESET</button>
+                </div>
+                <div id="list-color">hello</div>
+            </div>
+            
+        </div>
+        <script>
+             function onClick(){
+            console.log("clic");
+           }
+           class Color {
+            colorType = ''
+            records = []
+
+            constructor(type,rec) {
+                this.colorType = type;
+                this.records = rec;
+            }
+            generate(){
+                this.reset();
+                for(let i=0;i<6;i++){
+                var hex = c.getRandomNumber().toString(16);
+                while (hex.length < 6) {
+                    hex = "0" + hex;
+                }
+                this.records.push(hex);
+                }
+                this.colorType="#"+this.records[0];
+                localStorage.setItem("records", JSON.stringify({values:this.records}))
+            }
+            
+            getRandomNumber(){
+                return Math.floor(Math.random()*16777215)
+            }
+
+            getRecords(){
+                return this.records;
+            }
+
+            reset(){
+                this.colorType = '';
+                this.records = [];
+                localStorage.removeItem("records");
+            }
+           }
+           if(localStorage.getItem("records")===null){
+                var c = new Color();
+                c.generate();
+           }else{
+            let rec = JSON.parse(localStorage.getItem("records"))
+                var c = new Color("#"+rec.values[0],rec.values);
+           }
+           document.getElementById("generate").addEventListener("click",e =>{
+                c.generate();
+                console.log(c.getRecords());
+                console.log(c.colorType);
+                document.getElementById("color").innerHTML=c.colorType;
+                document.getElementById("menu-container").style.backgroundColor=c.colorType;
+                document.getElementById("generate").style.backgroundColor=c.colorType;
+                document.getElementById("reset").style.backgroundColor=c.colorType;
+                var listHtml="";
+                c.getRecords().forEach(elt=>{
+                listHtml+=`<div class="item" id=${elt}>
+                        <span>#${elt}</span>
+                        <span style="background-color:#${elt};width:10px;height:10px;margin-left: 3px;margin-top: 5px;"></span>
+                    </div>`
+                });
+                document.getElementById("list-color").innerHTML=listHtml;
+                c.getRecords().forEach(elt=>{
+                document.getElementById(elt).addEventListener("click",e=>{
+                    console.log(elt);
+                    c.colorType = "#"+elt;
+                    document.getElementById("color").innerHTML=c.colorType;
+                    document.getElementById("menu-container").style.backgroundColor=c.colorType;
+                    document.getElementById("generate").style.backgroundColor=c.colorType;
+                    document.getElementById("reset").style.backgroundColor=c.colorType;
+                });
+           });
+           });
+           document.getElementById("reset").addEventListener("click",e=>{
+                c.reset();
+                console.log("rec",c.getRecords());
+                console.log(c.colorType);
+                document.getElementById("color").innerHTML=c.colorType;
+                document.getElementById("menu-container").style.backgroundColor=c.colorType;
+                document.getElementById("generate").style.backgroundColor=c.colorType;
+                document.getElementById("reset").style.backgroundColor=c.colorType;
+                var listHtml="";
+                document.getElementById("list-color").innerHTML=listHtml;
+                localStorage.removeItem("records");
+           });
+           console.log(c.getRecords());
+           console.log(c.colorType);
+           document.getElementById("color").innerHTML=c.colorType;
+           document.getElementById("menu-container").style.backgroundColor=c.colorType;
+           document.getElementById("generate").style.backgroundColor=c.colorType;
+           document.getElementById("reset").style.backgroundColor=c.colorType;
+           var listHtml="";
+           c.getRecords().forEach(elt=>{
+                listHtml+=`<div class="item" id=${elt}>
+                        <span>#${elt}</span>
+                        <span style="background-color:#${elt};width:10px;height:10px;margin-left: 3px;margin-top: 5px;"></span>
+                    </div>`
+           });
+           document.getElementById("list-color").innerHTML=listHtml;
+           c.getRecords().forEach(elt=>{
+            document.getElementById(elt).addEventListener("click",e=>{
+                    console.log(elt);
+                    c.colorType = "#"+elt;
+                    document.getElementById("color").innerHTML=c.colorType;
+                    document.getElementById("menu-container").style.backgroundColor=c.colorType;
+                    document.getElementById("generate").style.backgroundColor=c.colorType;
+                    document.getElementById("reset").style.backgroundColor=c.colorType;
+                });
+           });
+          
+        </script>
+    </body>
+</html>

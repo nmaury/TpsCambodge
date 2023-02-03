@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="tab.css">
+    </head>
+    <body>
+        <div class="container">
+        <h1 class="title">About</h1>
+        <div class="description">
+            Lorem ipsum dolor sit amet, id fugiat aute qui incididunt incididunt do tempor ea sit culpa.
+        </div>
+        <img src="montain_path.jfif"class="image">
+        <table class="tripleMenu" cellpadding="0" cellspacing="0">
+            <tr class="topmenus">
+                <td class="menu"id="history">History</td>
+                <td class="menu"id="vision">Vision</td>
+                <td class="menu"id="goal">Goal</td>
+            </tr>
+            <tr rowspan="4">
+                <td colspan="3"><div id="content"><div class="contenttitle">History</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur nostrud qui officia.
+                    Occaecat mollit laboris mollit quis do eiusmod id enim laborum
+                     do duis aliqua excepteur velit ut. Mollit non ex consequat
+                     voluptate voluptate non pariatur adipisicing sit ex ea amet.
+                    Ut id adipisicing esse mollit et incididunt commodo aliquip esse
+                     sit et eu elit voluptate est. Non et nulla commodo.</p></div>
+            </tr>
+        </table>
+        </div>
+        <script>
+            document.getElementById("history").addEventListener("mouseover",e =>{
+                document.getElementById("content").innerHTML=`<div class="contenttitle">History</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur nostrud qui officia.
+                    Occaecat mollit laboris mollit quis do eiusmod id enim laborum
+                     do duis aliqua excepteur velit ut. Mollit non ex consequat
+                     voluptate voluptate non pariatur adipisicing sit ex ea amet.
+                    Ut id adipisicing esse mollit et incididunt commodo aliquip esse
+                     sit et eu elit voluptate est. Non et nulla commodo.</p>`;
+            });
+            document.getElementById("vision").addEventListener("mouseover",e =>{
+                document.getElementById("content").innerHTML=`<div class="contenttitle">Vision</div>
+                    <p>Lorem ipsum dolor sit amet, sunt minim commodo non est veniam 
+                        exercitation do nostrud consectetur duis velit anim aliquip 
+                        velit est aliqua exercitation veniam adipisicing. Nisi dolor 
+                        ut eu excepteur non amet ex consequat elit voluptate. Qui ut 
+                        excepteur id ex id aute laboris magna. Veniam id pariatur 
+                        nostrud.</p>`;
+            });
+            document.getElementById("goal").addEventListener("mouseover",e =>{
+                document.getElementById("content").innerHTML=`<div class="contenttitle">Goal</div>
+                    <p>Lorem ipsum dolor sit amet, qui anim voluptate reprehenderit 
+                        ut esse. Occaecat minim pariatur et aliquip duis fugiat incididunt 
+                        eu veniam nisi consequat. Consequat labore nisi velit dolore 
+                        labore labore non nostrud enim id enim est officia nisi et in 
+                        voluptate. Sunt enim esse adipisicing sit. Magna cillum irure ipsum 
+                        velit. Nisi laboris fugiat aliquip ullamco ex veniam do dolor nulla 
+                        ut quis enim dolor voluptate officia.</p>`;
+            });
+        </script>
+    </body>
+</html>

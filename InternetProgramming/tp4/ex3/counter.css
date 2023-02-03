@@ -1,0 +1,32 @@
+.container{
+    position: absolute;
+    width: -webkit-fill-available;
+    height: fit-content;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border: solid black 5px;
+    background-color: #ededf1;
+}
+.title{
+    text-align: center;
+    margin-bottom: 0;
+}
+#number{
+    color: #66A182;
+    font-size: xxx-large;
+    text-align: center;
+}
+.buttons{
+    display: flex;
+    justify-content: space-around;
+}
+.button{
+    color:#242424;
+    border: solid #242424 1px;
+    border-radius: 2px;
+}
+.button:hover{
+    color:#ededf1;
+   background-color: #242424;
+}
